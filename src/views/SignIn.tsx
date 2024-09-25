@@ -35,7 +35,7 @@ const SignIn = () => {
       // Check if the password matches
       if (userData.password === data.password) {
         setMassage("Login successful!");
-        navigate('/'); // Redirect to the home or dashboard
+        navigate('/home');
       } else {
         setMassage("Incorrect password.");
       }
