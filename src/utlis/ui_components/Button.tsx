@@ -12,6 +12,7 @@ interface ButtonProps {
     margin?: string;
     onClick?: () => void;
     children: React.ReactNode;
+    type?: 'button' | 'submit' | 'reset';
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -23,10 +24,12 @@ const Button: React.FC<ButtonProps> = ({
     radius,
     padding,
     margin,
+    type,
     onClick,
     children,
 }) => (
     <ButtonContainer
+        type={type}
         width={width}
         height={height}
         bg={bg}

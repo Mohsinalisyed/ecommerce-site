@@ -72,6 +72,7 @@ export const ButtonContainer = styled.button<ButtonProps>`
   margin:${({ margin }) => margin || '0'};
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-align:center;
 
   &:hover {
     background-color: ${({ bg }) => bg ? bg : '#f0f0f0'};
