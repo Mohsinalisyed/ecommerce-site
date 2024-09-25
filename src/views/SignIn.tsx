@@ -59,7 +59,7 @@ const SignIn = () => {
         </AuthSliderContentWrapper>
       </AuthSliderWrapper>
       <AuthFormWrapper>
-        {message && <span style={{ color: message === 'Login successful!'? 'green' : "red" }}>{message}</span>}
+        {message && <StyledText color={message === 'Login successful!'? 'green' : "red" } size="12px">{message}</StyledText>}
         <Heading>Welcome</Heading>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Flex direction="column" gap="16px">
@@ -69,7 +69,7 @@ const SignIn = () => {
               name="email"
               control={control}
             />
-            {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
+            {errors.email && <StyledText color="red" size="12px">{errors.email.message}</StyledText>}
 
             <InputField
               placeholder="Password"
@@ -79,7 +79,7 @@ const SignIn = () => {
               name="password"
               control={control}
             />
-            {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
+            {errors.password && <StyledText color="red" size="12px">{errors.password.message}</StyledText>}
 
             <ForgotPasswordStyle>
               <StyledLink to="/" size="14px" color="#6f74dd">

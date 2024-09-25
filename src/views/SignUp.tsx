@@ -7,9 +7,12 @@ import Button from "../utlis/ui_components/Button";
 import InputField from "../utlis/ui_components/InputFeild";
 import { Heading } from "./style";
 import { signUpSchema, SignUpFormData } from './type';
+import { useState } from "react";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [message, setMassage] = useState('')
+
   const {
     control,
     handleSubmit,
@@ -21,14 +24,14 @@ const SignUp = () => {
   const onSubmit = (data: SignUpFormData) => {
     const existingUser = localStorage.getItem(data.email);
     if (existingUser) {
-      alert("Email is already registered.");
+      setMassage("Email is already registered.");
       return;
     }
 
     const userData = { name: data.name, email: data.email, password: data.password };
     localStorage.setItem('user', JSON.stringify(userData));
-    alert("Account created successfully!");
-    navigate('/'); // Redirect after successful sign-up
+    setMassage("Account created successfully!");
+    navigate('/');
   };
 
 
@@ -44,6 +47,7 @@ const SignUp = () => {
       </AuthSliderWrapper>
       <AuthFormWrapper>
         <Form onSubmit={handleSubmit(onSubmit)}>
+          {message && <StyledText color={message === 'Login successful!' ? 'green' : "red"} size="12px">{message}</StyledText>}
           <Heading>Registration</Heading>
           <Flex direction="column" gap="16px">
             <InputField
@@ -52,7 +56,7 @@ const SignUp = () => {
               name="name"
               control={control}
             />
-            {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
+            {errors.name && <StyledText color="red" size="12px">{errors.name.message}</StyledText>}
 
             <InputField
               placeholder="Email"
@@ -60,7 +64,7 @@ const SignUp = () => {
               name="email"
               control={control}
             />
-            {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
+            {errors.email && <StyledText color="red" size="12px">{errors.email.message}</StyledText>}
 
             <InputField
               placeholder="Password"
@@ -70,7 +74,7 @@ const SignUp = () => {
               name="password"
               control={control}
             />
-            {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
+            {errors.password && <StyledText color="red" size="12px">{errors.password.message}</StyledText>}
 
             <InputField
               placeholder="Re-enter password"
@@ -80,7 +84,7 @@ const SignUp = () => {
               name="confirmPassword"
               control={control}
             />
-            {errors.confirmPassword && <span style={{ color: 'red' }}>{errors.confirmPassword.message}</span>}
+            {errors.confirmPassword && <StyledText color="red" size="12px">{errors.confirmPassword.message}</StyledText>}
           </Flex>
 
           <Button
