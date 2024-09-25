@@ -1,10 +1,15 @@
-import { AuthWrapper } from "../component"
+import { AuthFormWrapper, AuthSliderWrapper, AuthWrapper } from "../component"
 
 const SignIn = () => {
   return (
     <AuthWrapper>
-      login
-    </AuthWrapper>
+      <AuthSliderWrapper>
+        
+      </AuthSliderWrapper>
+      <AuthFormWrapper>
+        login
+      </AuthFormWrapper>
+      </AuthWrapper>
   )
 }
 

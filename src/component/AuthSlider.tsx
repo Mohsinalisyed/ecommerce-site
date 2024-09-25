@@ -1,7 +1,10 @@
+import { AuthSliderWrapper } from "./style"
 
 const AuthSlider = () => {
   return (
-    <div>Auth</div>
+    <AuthSliderWrapper>
+      
+    </AuthSliderWrapper>
   )
 }
 
