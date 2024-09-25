@@ -1,8 +1,6 @@
-import MainSidebar from "../component/Sidebar"
-
 const Home = () => {
   return (
-    <MainSidebar/>
+    <div>hello</div>
   )
 }
 

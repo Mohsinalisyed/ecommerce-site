@@ -31,8 +31,6 @@ const SignIn = () => {
 
     if (storedUser) {
       const userData = JSON.parse(storedUser);
-
-      // Check if the password matches
       if (userData.password === data.password) {
         setMassage("Login successful!");
         navigate('/home');

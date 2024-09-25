@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
-// import "react-pro-sidebar/dist/style.css";
-import { HeaderContainer, CloseMenu, LogoContainer } from "./style"; // Import styled components
+import { NavLink } from "react-router-dom";
+import { HeaderContainer, CloseMenu, LogoContainer } from "./style";
 
-const MainSidebar: React.FC = () => {
-    const [menuCollapse, setMenuCollapse] = useState<boolean>(false);
+interface MainSidebarProps {
+    menuCollapse: boolean;
+    setMenuCollapse: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+const MainSidebar: React.FC<MainSidebarProps> = ({ menuCollapse, setMenuCollapse }) => {
     const menuIconClick = () => {
         setMenuCollapse(prev => !prev);
     };
@@ -17,17 +20,56 @@ const MainSidebar: React.FC = () => {
                     <p>{menuCollapse ? "Logo" : "Big Logo"}</p>
                 </LogoContainer>
                 <CloseMenu onClick={menuIconClick}>
-                    {menuCollapse ? 'open' : 'close'}
+                    {menuCollapse ? 'Open' : 'Close'}
                 </CloseMenu>
                 <Menu>
-                    <MenuItem active={true}>Home</MenuItem>
-                    <MenuItem>Category</MenuItem>
-                    <MenuItem>Favourite</MenuItem>
-                    <MenuItem>Author</MenuItem>
-                    <MenuItem>Settings</MenuItem>
+                    <MenuItem>
+                        <NavLink to="/home" style={({ isActive }) => ({
+                            textDecoration: 'none',
+                            color: isActive ? 'blue' : 'inherit',
+                        })}>
+                            Home
+                        </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink to="/home/category" style={({ isActive }) => ({
+                            textDecoration: 'none',
+                            color: isActive ? 'blue' : 'inherit',
+                        })}>
+                            Category
+                        </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink to="/home/favourite" style={({ isActive }) => ({
+                            textDecoration: 'none',
+                            color: isActive ? 'blue' : 'inherit',
+                        })}>
+                            Favourite
+                        </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink to="/home/author" style={({ isActive }) => ({
+                            textDecoration: 'none',
+                            color: isActive ? 'blue' : 'inherit',
+                        })}>
+                            Author
+                        </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink to="/home/settings" style={({ isActive }) => ({
+                            textDecoration: 'none',
+                            color: isActive ? 'blue' : 'inherit',
+                        })}>
+                            Settings
+                        </NavLink>
+                    </MenuItem>
                 </Menu>
-                <Menu style={{ position:"absolute", bottom:"0"}}>
-                    <MenuItem>Logout</MenuItem>
+                <Menu style={{ position: "absolute", bottom: "0" }}>
+                    <MenuItem>
+                        <NavLink to="/logout" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            Logout
+                        </NavLink>
+                    </MenuItem>
                 </Menu>
             </Sidebar>
         </HeaderContainer>
