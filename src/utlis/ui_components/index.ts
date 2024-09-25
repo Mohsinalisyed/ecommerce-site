@@ -1,4 +1,6 @@
-export * from './Container'
+export * from './Box'
 export * from './Flex'
+export * from './Container'
 export * from './InputFeild'
 export * from './StyledLink'
+export * from './StyledText'

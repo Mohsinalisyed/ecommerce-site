@@ -86,7 +86,7 @@ export const ButtonContainer = styled.button<ButtonProps>`
 export const TextContainer = styled.span<TextProps>`
   font-size: ${({ size }) => size || '16px'}; 
   font-weight: ${({ weight }) => weight || '400'};
-  color: ${({ color }) => color || '#000'};
+  color: ${({ color }) => color || '#ffffff'};
   line-height: ${({ lineHeight }) => lineHeight || 'normal'};
   font-family:${({ fontFamily }) => fontFamily || 'OpenSans-Light'};
 `;
