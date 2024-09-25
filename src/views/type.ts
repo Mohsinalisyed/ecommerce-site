@@ -20,4 +20,10 @@ export const signUpSchema = z
         message: Messages.PASSWORD_NOT_MATCH,
     });
 
+export const signInSchema = z.object({
+    email: EMAIL_VALIDATION,
+    password: PASSWORD_VALIDATION,
+});
+
+export type SignInFormData = z.infer<typeof signInSchema>;
 export type SignUpFormData = z.infer<typeof signUpSchema>;

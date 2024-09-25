@@ -1,10 +1,8 @@
-// validationSchemas.ts
 import { z } from 'zod';
 
 import { FULLNAME_REGEX, NEW_PASSWORD_REGEX, PASSWORD_REGEX } from './regex';
 import { Messages } from './enums';
 
-// Create all form validations here and use them in the form schema
 export const EMAIL_VALIDATION = z
     .string()
     .min(1, Messages.EMAIL_REQUIRED)

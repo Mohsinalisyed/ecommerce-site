@@ -1,33 +1,32 @@
 import React from 'react';
 import { InputWrapper, IconLeft, IconRight, StyledInput } from './style';
-import { UseFormRegister } from 'react-hook-form';
-import { SignUpFormData } from '../../views/type';
+import { Controller } from 'react-hook-form';
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
-    register: UseFormRegister<SignUpFormData>
-    name: "name" | "email" | "password" | "confirmPassword",
-    value?: string;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    control: any;
+    name: "name" | "email" | "password" | "confirmPassword";
 }
 
 const InputField: React.FC<InputFieldProps> = ({
     leftIcon,
     rightIcon,
-    register,
+    control,
     name,
-    value,
-    onChange,
     ...props
 }) => (
     <InputWrapper>
         {leftIcon && <IconLeft>{leftIcon}</IconLeft>}
-        <StyledInput
-            {...register(name)}
-            value={value}
-            onChange={onChange}
-            {...props}
+        <Controller
+            name={name}
+            control={control}
+            render={({ field }) => (
+                <StyledInput
+                    {...field}
+                    {...props}
+                />
+            )}
         />
         {rightIcon && <IconRight>{rightIcon}</IconRight>}
     </InputWrapper>

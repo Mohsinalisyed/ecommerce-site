@@ -11,7 +11,7 @@ import { signUpSchema, SignUpFormData } from './type';
 const SignUp = () => {
   const navigate = useNavigate();
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm<SignUpFormData>({
@@ -42,7 +42,7 @@ const SignUp = () => {
               placeholder="Name"
               leftIcon={<NameIcon />}
               name="name"
-              register={register}
+              control={control}
             />
             {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
 
@@ -50,7 +50,7 @@ const SignUp = () => {
               placeholder="Email"
               leftIcon={<EmailIcon />}
               name="email"
-              register={register}
+              control={control}
             />
             {errors.email && <span style={{ color: 'red' }}>{errors.email.message}</span>}
 
@@ -60,7 +60,7 @@ const SignUp = () => {
               rightIcon={<EyeIcon />}
               type="password"
               name="password"
-              register={register}
+              control={control}
             />
             {errors.password && <span style={{ color: 'red' }}>{errors.password.message}</span>}
 
@@ -70,7 +70,7 @@ const SignUp = () => {
               rightIcon={<EyeIcon />}
               type="password"
               name="confirmPassword"
-              register={register}
+              control={control}
             />
             {errors.confirmPassword && <span style={{ color: 'red' }}>{errors.confirmPassword.message}</span>}
           </Flex>
@@ -86,11 +86,11 @@ const SignUp = () => {
             Create Account
           </Button>
 
-       
-          <StyledLink to="/" size="14px" color="#828282">
-            Already have an account?
-          </StyledLink>
-
+          <Flex justifyContent="center">
+            <StyledLink to="/" size="14px" color="#828282">
+              Already have an account?
+            </StyledLink>
+         </Flex>
 
           <Button
             bg="transparent"
@@ -103,7 +103,6 @@ const SignUp = () => {
             Login
           </Button>
         </Form>
-
       </AuthFormWrapper>
     </AuthWrapper>
   );
