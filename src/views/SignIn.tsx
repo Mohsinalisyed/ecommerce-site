@@ -6,7 +6,7 @@ import {
   AuthWrapper,
   ForgotPasswordStyle,
 } from "../component";
-import { Flex, StyledLink, StyledText } from "../utlis";
+import { EmailIcon, EyeIcon, Flex, PasswordIcon, StyledLink, StyledText } from "../utlis";
 import Button from "../utlis/ui_components/Button";
 import InputField from "../utlis/ui_components/InputFeild";
 import { Heading } from "./style";
@@ -29,8 +29,8 @@ const SignIn = () => {
       <AuthFormWrapper>
         <Heading>Welcome</Heading>
         <Flex direction="column" gap="16px">
-          <InputField placeholder="Email" />
-          <InputField placeholder="Password" />
+          <InputField placeholder="Email" leftIcon={<EmailIcon/> } />
+          <InputField placeholder="Password" leftIcon={<PasswordIcon />} rightIcon={<EyeIcon />} />
           <ForgotPasswordStyle>
             <StyledLink to="/" size="14px" color="#6f74dd">
               Forgot password?

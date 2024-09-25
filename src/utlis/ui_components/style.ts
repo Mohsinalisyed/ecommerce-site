@@ -28,14 +28,14 @@ export const InputWrapper = styled.div`
 
 export const IconLeft = styled.div`
   position: absolute;
-  left: 10px;
+  left: 8px;
   display: flex;
   align-items: center;
 `;
 
 export const IconRight = styled.div`
   position: absolute;
-  right: 10px;
+  right: 8px;
   display: flex;
   align-items: center;
 `;
@@ -43,7 +43,7 @@ export const IconRight = styled.div`
 export const StyledInput = styled.input`
   width: 100%;
   height: 100%;
-  padding: 0 30px;
+  padding: 0 38px;
   border: none;
   border-radius: 8px;
   outline: none;

@@ -5,7 +5,7 @@ import {
   AuthSliderWrapper,
   AuthWrapper,
 } from "../component";
-import { Flex, StyledLink, StyledText } from "../utlis";
+import { EmailIcon, EyeIcon, Flex, NameIcon, PasswordIcon, StyledLink, StyledText } from "../utlis";
 import Button from "../utlis/ui_components/Button";
 import InputField from "../utlis/ui_components/InputFeild";
 import { Heading } from "./style";
@@ -28,10 +28,10 @@ const SignUp = () => {
       <AuthFormWrapper>
         <Heading>Registration</Heading>
         <Flex direction="column" gap="16px">
-          <InputField placeholder="Name" />
-          <InputField placeholder="Email" />
-          <InputField placeholder="Password" />
-          <InputField placeholder="Confirm Password" />
+          <InputField placeholder="Name" leftIcon={<NameIcon/> } />
+          <InputField placeholder="Email" leftIcon={<EmailIcon/> } />
+          <InputField placeholder="Password" leftIcon={<PasswordIcon/> } rightIcon={<EyeIcon/>} />
+          <InputField placeholder="Re-enter password" leftIcon={<PasswordIcon />} rightIcon={<EyeIcon />} />
         </Flex>
         <Button
           bg="#89089f"
