@@ -22,6 +22,10 @@ export const AuthSliderWrapper = styled.div`
  border-top-left-radius:24px;
 `;
 export const AuthFormWrapper = styled.div`
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column;
  width:100%;
  max-width:486px;
  height:100%;
