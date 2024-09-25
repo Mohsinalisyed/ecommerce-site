@@ -1,9 +1,10 @@
 body {
   box-sizing: border-box;
-    background-color: #F1F1F1;
-    overflow-x: hidden;
-    margin: 0px;
+  background-color: #F1F1F1;
+  overflow-x: hidden;
+  margin: 0px;
 }
+
 @font-face {
   font-family: 'OpenSans-Bold';
   src: local('OpenSans-Bold'), url(./fonts/OpenSans-Bold.ttf) format('truetype');

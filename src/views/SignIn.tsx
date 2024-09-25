@@ -1,7 +1,10 @@
+import { AuthWrapper } from "../component"
 
 const SignIn = () => {
   return (
-    <div>SignIn</div>
+    <AuthWrapper>
+      login
+    </AuthWrapper>
   )
 }
 
