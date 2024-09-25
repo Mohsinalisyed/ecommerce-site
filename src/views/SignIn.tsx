@@ -13,8 +13,10 @@ import Button from "../utlis/ui_components/Button";
 import InputField from "../utlis/ui_components/InputFeild";
 import { Heading } from "./style";
 import { SignInFormData, signInSchema } from "./type";
+import { useState } from "react";
 
 const SignIn = () => {
+  const [message,setMassage]=useState('')
   const navigate = useNavigate();
   const {
     control,
@@ -25,9 +27,23 @@ const SignIn = () => {
   });
 
   const onSubmit = (data: SignInFormData) => {
-    // Handle sign-in logic, e.g., authentication API call
-    console.log(data);
+    const storedUser = localStorage.getItem(data.email);
+
+    if (storedUser) {
+      const userData = JSON.parse(storedUser);
+
+      // Check if the password matches
+      if (userData.password === data.password) {
+        setMassage("Login successful!");
+        navigate('/'); // Redirect to the home or dashboard
+      } else {
+        setMassage("Incorrect password.");
+      }
+    } else {
+      setMassage("User not found. Please check your credentials.");
+    }
   };
+
 
   return (
     <AuthWrapper>
@@ -43,6 +59,7 @@ const SignIn = () => {
         </AuthSliderContentWrapper>
       </AuthSliderWrapper>
       <AuthFormWrapper>
+        {message && <span style={{ color: message === 'Login successful!'? 'green' : "red" }}>{message}</span>}
         <Heading>Welcome</Heading>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Flex direction="column" gap="16px">

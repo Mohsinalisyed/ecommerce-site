@@ -19,10 +19,18 @@ const SignUp = () => {
   });
 
   const onSubmit = (data: SignUpFormData) => {
+    const existingUser = localStorage.getItem(data.email);
+    if (existingUser) {
+      alert("Email is already registered.");
+      return;
+    }
+
     const userData = { name: data.name, email: data.email, password: data.password };
-    localStorage.setItem(data.email, JSON.stringify(userData));
-    navigate('/');
+    localStorage.setItem('user', JSON.stringify(userData));
+    alert("Account created successfully!");
+    navigate('/'); // Redirect after successful sign-up
   };
+
 
   return (
     <AuthWrapper>
