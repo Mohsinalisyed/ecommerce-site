@@ -27,8 +27,7 @@ const SignIn = () => {
   });
 
   const onSubmit = (data: SignInFormData) => {
-    const storedUser = localStorage.getItem(data.email);
-
+    const storedUser = localStorage.getItem('user');
     if (storedUser) {
       const userData = JSON.parse(storedUser);
       if (userData.password === data.password) {
