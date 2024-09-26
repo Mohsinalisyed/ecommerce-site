@@ -195,9 +195,11 @@ const ArrowButton = styled.div`
 `;
 
 const QuantityDisplay = styled.div`
-font-size: 16px;
-  color:#393939;
+  font-family: Raleway-Medium;
   font-weight: 600;
+  font-size: 22.09px;
+  line-height: 22.36px;
+  color: #393939;
  
 `;
 
