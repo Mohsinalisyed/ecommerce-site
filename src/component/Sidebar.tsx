@@ -3,6 +3,7 @@ import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { HeaderContainer, CloseMenu, LogoContainer, StyledNavLink } from "./style";
 import ProfileImg from "../assets/ProfileImg.png";
 import { AnalyticIcon, Box, DashboardIcon, Flex, InventoryIcon, LogoutIcon, NotificationIcon, ProductIcon, StyledText } from "../utlis";
+import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 
 interface MainSidebarProps {
     menuCollapse: boolean;
@@ -41,7 +42,11 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
                     </Flex>
                 </LogoContainer>
                 <CloseMenu onClick={menuIconClick}>
-                    {menuCollapse ? "Open" : "Close"}
+                    {menuCollapse ? (
+                        <FiArrowRightCircle />
+                    ) : (
+                        <FiArrowLeftCircle />
+                    )}
                 </CloseMenu>
                 <Menu>
                     <MenuItem
@@ -90,7 +95,7 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
                         </StyledNavLink>
                     </MenuItem>
                 </Menu>
-                <Menu style={{ position: "absolute", bottom: "0", left: '24px' }}>
+                <Menu style={{ position: "absolute", bottom: "0", left: menuCollapse ? '0' :'24px' }}>
                     <MenuItem icon={<LogoutIcon />}>
                         <StyledNavLink to="/logout">
                             Logout
