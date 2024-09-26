@@ -8,7 +8,7 @@ const Layout = () => {
 
     const contentStyle: React.CSSProperties = {
         flex: 1,
-        paddingLeft: !menuCollapse ? '266px' : '70px',
+        paddingLeft: !menuCollapse ? '266px' : '80px',
         overflowY: 'auto',
     };
     const layoutContainer: React.CSSProperties = {
