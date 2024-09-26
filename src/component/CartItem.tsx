@@ -1,10 +1,9 @@
-import { Box, Flex, Img, StyledText } from "../utlis"
+import { Box, Flex, Img, StyledText, TrashIcon } from "../utlis"
 import { AddToCartWrapper, ImageWrapper } from "../views/style"
 import Shoes1 from '../assets/Shoes1.png'
 import { CustomWrapper, DeleteIcon, Price } from "./style"
-import { FaTrash } from "react-icons/fa"
 import QuantityControl from "./QuantityControl"
-const AddToCart = () => {
+const CartItem = () => {
   return (
       <AddToCartWrapper>
           <Flex alignItems="center" gap="12px">
@@ -25,11 +24,11 @@ const AddToCart = () => {
               <QuantityControl initialQuantity={1} />
               <Price>$65</Price>
               <DeleteIcon >
-                  <FaTrash />
+                  <TrashIcon/>
               </DeleteIcon>
           </CustomWrapper>
     </AddToCartWrapper>
   )
 }
 
-export default AddToCart
+export default CartItem

@@ -1,5 +1,5 @@
 import { HomeWrapper } from "../component"
-import AddToCart from "../component/AddToCart"
+import AddToCart from "../component/CartItem"
 import Payment from "../component/Payment"
 import { Box } from "../utlis"
 import { CartWrapper } from "./style"

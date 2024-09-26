@@ -181,13 +181,11 @@ const QuantityWrapper = styled.div`
   gap: 10px;
 `;
 
-const ArrowButton = styled.button`
+const ArrowButton = styled.div`
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  color: #333;
-
+  height:11px;
   &:hover {
     opacity: 0.7;
   }
