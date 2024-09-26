@@ -18,7 +18,8 @@ interface TextProps {
 }
 export const InputWrapper = styled.div`
   position: relative;
-  width: 358px;
+  width:100%;
+  max-width: 358px;
   height: 40px;
   border: 1px solid #D0D0D0;
   border-radius: 8px;

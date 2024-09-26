@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const StyledFlex = styled(Flex)`
     margin-bottom: 6px;
+    flex-wrap:wrap;
 `;
 
 interface CardContentWrapperProps {

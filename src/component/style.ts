@@ -61,7 +61,9 @@ export const AuthFormWrapper = styled.div`
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
     @media (max-width: 768px) {
-    margin-top:24px;
+    margin-top:12px;
+    padding:12px;
+    border-radius: 24px;
   };
 `;
 export const ForgotPasswordStyle = styled.div`
@@ -124,11 +126,17 @@ const ComingSoonContainer = styled.div`
 `;
 const HomeWrapper = styled.div`
   margin: 0px 40px 0px 38px;
+    @media (max-width: 768px) {
+    margin: 0px 12px;
+  }; 
 `;
 const BannerWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap:24px
+  gap:24px;
+    @media (max-width: 768px) {
+    flex-direction: column;
+  }; 
 `;
 
  const Card = styled.div`
@@ -229,13 +237,17 @@ const DeleteIcon = styled.button`
 const PaymentWrapper = styled.div`
   width:100%;
   max-width: 398px;
-  height: 709px;
+  min-height: 709px;
   border-radius: 24px;
   padding: 24px;
   background: #89089F;
   display: flex;
   flex-direction: column;
   box-sizing:border-box;
+  @media (max-width: 768px) {
+    padding: 12px;
+  }; 
+  
 `;
 const CardTypeWrapper = styled.div`
   width: 75px;
@@ -247,6 +259,9 @@ const CardTypeWrapper = styled.div`
 
 const InputWrapper = styled.div`
   margin-top: 14px;
+   @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Label = styled.label`
@@ -274,6 +289,7 @@ const InputField = styled.input<InputFieldProps>`
   color: red;
   box-sizing: border-box;
   color: #ffffff !important;
+  
   &:focus {
     outline: none;
   }
@@ -302,7 +318,13 @@ const CheckoutWrapper = styled.div`
   margin-top:24px;
 
 `;
+const ResponsiveImg = styled.img`
+  width: ${(props) => props.width || '100%'};
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
 export {
   HeaderContainer,
   CloseMenu,
@@ -327,5 +349,6 @@ export {
   Label,
   StyledBox,
   CheckoutWrapper,
-  StyledSeperator
+  StyledSeperator,
+  ResponsiveImg
 };

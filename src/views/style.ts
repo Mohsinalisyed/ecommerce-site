@@ -25,6 +25,7 @@ export const CartWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding:12px;
   }
 `;
 export const AddToCartWrapper = styled.div`

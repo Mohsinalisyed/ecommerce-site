@@ -1,7 +1,7 @@
 import React from "react"
 import Navbar from "../component/Navbar"
-import { BannerWrapper, CardWrapper, HomeWrapper } from "../component"
-import { Img, products } from "../utlis"
+import { BannerWrapper, CardWrapper, HomeWrapper, ResponsiveImg } from "../component"
+import { products } from "../utlis"
 import LeftBannerImage from '../assets/LeftBannerImage.png'
 import RightBannerImage from '../assets/RightBannerImage.png'
 import ProductCard from "../component/Card"
@@ -11,8 +11,8 @@ const Home = () => {
       <HomeWrapper>
         <Navbar />
         <BannerWrapper>
-          <Img src={LeftBannerImage} alt="LeftBannerImage" width={'70%'}/>
-          <Img src={RightBannerImage} alt="LeftBannerImage" width={'30%'} />
+          <ResponsiveImg src={LeftBannerImage} alt="LeftBannerImage" width={'70%'}/>
+          <ResponsiveImg src={RightBannerImage} alt="LeftBannerImage" width={'30%'} />
         </BannerWrapper>
         <CardWrapper>
           {products.map(product => (

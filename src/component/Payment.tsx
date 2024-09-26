@@ -23,7 +23,7 @@ const Payment = () => {
         <StyledText size="16px" lineHeight="21px" fontFamily="OpenSans-Light" weight="400" color="#FEFCFC">
           Card type
         </StyledText>
-        <Flex gap="17px" style={{margin:'10px 0'}}>
+        <Flex gap="17px" style={{margin:'10px 0'}} flexWrap="wrap">
           <CardTypeWrapper>
             <Img src={MasterCardIcon} alt="MasterCardIcon" />
           </CardTypeWrapper>
@@ -45,7 +45,7 @@ const Payment = () => {
       <CardContentWrapper label="Shipping" price="$4" />
       <CardContentWrapper label="Total (Tax incl.)" price="$1,672" />
       <CheckoutWrapper>
-        <Flex justifyContent='space-between' style={{width:"100%"}}>
+        <Flex justifyContent='space-between' style={{width:"100%"}} flexWrap="wrap">
           <StyledText size="16px" lineHeight="21px" fontFamily="OpenSans-Light" weight="400" color="#FEFCFC">
             $1,672
           </StyledText>
