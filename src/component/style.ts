@@ -283,6 +283,10 @@ const StyledBox = styled.div`
   border: 1px solid #BA68C8;
   margin: 24px 0;
 `;
+const StyledSeperator = styled.div`
+ border-top: 0.99px solid #C0C0C0;
+ width:90%;
+`;
 const CheckoutWrapper = styled.div`
   width: 100%;
   height: 60px;
@@ -319,5 +323,6 @@ export {
   InputField,
   Label,
   StyledBox,
-  CheckoutWrapper
+  CheckoutWrapper,
+  StyledSeperator
 };

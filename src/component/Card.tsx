@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, ContentWrapper } from './style';
+import { Card, ContentWrapper, StyledSeperator } from './style';
 import { Box, Flex, HeartIcon, Img, StarIcon, StyledText } from '../utlis';
 import Button from '../utlis/ui_components/Button';
 import { useDispatch } from 'react-redux';
@@ -58,6 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, name, price, id }) 
                     <Flex alignItems="center" gap='7px'> <HeartIcon /> {price}</Flex>
                 </StyledText>
             </ContentWrapper>
+            <StyledSeperator />
             <ContentWrapper>
                 <StyledText
                     color="#1F1F22"
