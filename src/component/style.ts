@@ -114,5 +114,62 @@ const ComingSoonContainer = styled.div`
   height: 100vh;
 
 `;
+const HomeWrapper = styled.div`
+  margin: 0px 40px 0px 38px;
+`;
+const BannerWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap:24px
+`;
 
-export { HeaderContainer, CloseMenu, LogoContainer, StyledNavLink, ComingSoonContainer };
+ const Card = styled.div`
+  width: 295.6px;
+  height: 431.82px;
+  border-radius: 15.63px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .name, .price, .rating {
+    margin: 8px 0;
+  }
+`;
+const CardWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content:center;
+    gap: 16px;
+    margin:24px 0;
+`;
+const ContentWrapper = styled.div`
+  padding: 15px 11px 15px 11px;
+  width: 90% !important;
+  display:flex;
+  justify-content:space-between;
+`;
+export {
+  HeaderContainer,
+  CloseMenu,
+  LogoContainer,
+  StyledNavLink,
+  ComingSoonContainer,
+  HomeWrapper,
+  BannerWrapper,
+  Card,
+  CardWrapper,
+  ContentWrapper,
+};

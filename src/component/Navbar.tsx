@@ -3,7 +3,7 @@ import Button from "../utlis/ui_components/Button"
 
 const Navbar = () => {
   return (
-    <Flex justifyContent="end" style={{ margin: "0px 40px 0px 38px" }}>
+    <Flex justifyContent="end">
       <Button
         bg="#ffffff"
         width="156px"

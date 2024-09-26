@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { HeaderContainer, CloseMenu, LogoContainer, StyledNavLink } from "./style";
 import ProfileImg from "../assets/ProfileImg.png";
-import { AnalyticIcon, Box, DashboardIcon, Flex, InventoryIcon, LogoutIcon, NotificationIcon, ProductIcon, StyledText } from "../utlis";
+import { AnalyticIcon, Box, DashboardIcon, Flex, Img, InventoryIcon, LogoutIcon, NotificationIcon, ProductIcon, StyledText } from "../utlis";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 
 interface MainSidebarProps {
@@ -29,7 +29,7 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
             <Sidebar collapsed={menuCollapse}>
                 <LogoContainer className="logotext">
                     <Flex alignItems="center" gap="12px">
-                        <img src={ProfileImg} alt="ProfileImg" />
+                        <Img src={ProfileImg} alt="ProfileImg" />
                         <Box>
                             <StyledText color="#09090A" fontFamily="OpenSans-Bold" weight="700" lineHeight="22px" size="16px">
                                 Mark Wood
