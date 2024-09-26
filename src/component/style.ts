@@ -3,7 +3,9 @@ import authimage from "../assets/AuthImage.png";
 import { Menu } from "react-pro-sidebar";
 import { NavLink } from 'react-router-dom';
 
-
+interface InputFieldProps {
+  width?: string;
+}
 
 export const StyledMenu = styled(Menu)`
   height: 70vh;
@@ -168,7 +170,7 @@ const ContentWrapper = styled.div`
 const CustomWrapper = styled.div`
   width: auto;
   height: auto;
-  max-width: 205px;
+  min-width: 205px;
   max-height: 27px;
   display: flex;
   gap: 44px;
@@ -199,7 +201,7 @@ font-size: 16px;
 `;
 
 const Price = styled.div`
-  font-family: OpenSans-Bold;
+  font-family: OpenSans-Medium;
   font-weight: 700;
   font-size: 20.09px;
   line-height: 27.36px;
@@ -215,6 +217,78 @@ const DeleteIcon = styled.button`
   &:hover {
     opacity: 0.7;
   }
+`;
+const PaymentWrapper = styled.div`
+  width:100%;
+  max-width: 398px;
+  height: 709px;
+  border-radius: 24px;
+  padding: 24px;
+  background: #89089F;
+  display: flex;
+  flex-direction: column;
+  box-sizing:border-box;
+`;
+const CardTypeWrapper = styled.div`
+  width: 75px;
+  height: 55px;
+  border-radius: 5px;
+  background: rgba(217, 217, 217, 0.2);
+  box-sizing:border-box;
+`;
+
+const InputWrapper = styled.div`
+  margin-top: 14px;
+`;
+
+const Label = styled.label`
+  display: block;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  font-size:16px;
+  line-height:21px;
+  font-weight:400;
+  font-family:OpenSans-Light;
+`;
+
+const InputField = styled.input<InputFieldProps>`
+  width: 100%;
+  max-width: ${({ width }) => width || '100%'};
+  height: 48px;
+  border-radius: 6px;
+  background: rgba(186, 104, 200);
+  border: none;
+  padding: 0 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: red;
+  box-sizing: border-box;
+  color: #ffffff !important;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    outline: none;
+  }
+`;
+const StyledBox = styled.div`
+  border: 1px solid #BA68C8;
+  margin: 24px 0;
+`;
+const CheckoutWrapper = styled.div`
+  width: 100%;
+  height: 60px;
+  background: #BA68C8;
+  display:flex;
+  align-items:center;
+  padding:0 20px 0 24px;
+  border-radius:12px;
+  box-sizing:border-box;
+  margin-top:24px;
+
 `;
 
 export {
@@ -233,5 +307,12 @@ export {
   QuantityDisplay,
   QuantityWrapper,
   Price,
-  DeleteIcon
+  DeleteIcon,
+  PaymentWrapper,
+  CardTypeWrapper,
+  InputWrapper,
+  InputField,
+  Label,
+  StyledBox,
+  CheckoutWrapper
 };
