@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { HeaderContainer, CloseMenu, LogoContainer, StyledNavLink } from "./style";
 import ProfileImg from "../assets/ProfileImg.png";
 import { AnalyticIcon, Box, DashboardIcon, Flex, Img, InventoryIcon, LogoutIcon, NotificationIcon, ProductIcon, StyledText } from "../utlis";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 interface MainSidebarProps {
     menuCollapse: boolean;
@@ -14,8 +15,19 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
     menuCollapse,
     setMenuCollapse,
 }) => {
-    const [activeItem, setActiveItem] = useState<string>("dashboard"); // Set default active item
-
+    const [activeItem, setActiveItem] = useState<string>("dashboard");
+    const [resSideBar, setResSidebar]=useState(false)
+    const width = useWindowWidth();
+    useEffect(() => {
+        if (width < 960) {
+            setMenuCollapse(true);
+            setResSidebar(true)
+        }
+        else {
+            setMenuCollapse(false);
+            setResSidebar(false)
+        }
+    }, [width])
     const menuIconClick = () => {
         setMenuCollapse((prev) => !prev);
     };
@@ -41,66 +53,74 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
                         </Box>
                     </Flex>
                 </LogoContainer>
-                <CloseMenu onClick={menuIconClick}>
+                {!resSideBar  && <CloseMenu onClick={menuIconClick}>
                     {menuCollapse ? (
                         <FiArrowRightCircle />
                     ) : (
                         <FiArrowLeftCircle />
                     )}
-                </CloseMenu>
+                </CloseMenu>}
                 <Menu>
+                    <StyledNavLink to="/dashboard" className={activeItem === "dashboard" ? 'active' : 'inactive'}>
                     <MenuItem
                         icon={<DashboardIcon active={activeItem === "dashboard" } />}
                         active={activeItem === "dashboard"}
                         onClick={() => handleMenuItemClick("dashboard")}
                     >
-                        <StyledNavLink to="/dashboard" className={activeItem === "dashboard" ? 'active' : 'inactive'}>
-                            Dashboard
-                        </StyledNavLink>
-                    </MenuItem>
+                       
+                            {!resSideBar && !menuCollapse && 'Dashboard'}
+                        
+                        </MenuItem>
+                    </StyledNavLink>
+                    <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "products" ? 'active' : 'inactive'}>
+
                     <MenuItem
                         icon={<ProductIcon active={activeItem === "products"} />}
                         active={activeItem === "products"}
                         onClick={() => handleMenuItemClick("products")}
                     >
-                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "products" ? 'active' : 'inactive'}>
-                            Products
-                        </StyledNavLink>
-                    </MenuItem>
+                            {!resSideBar && !menuCollapse  && 'Products'}
+                        </MenuItem>
+                    </StyledNavLink>
+
+                    <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "notifications" ? 'active' : 'inactive'}>
+
                     <MenuItem
                         icon={<NotificationIcon active={activeItem === "notifications"} />}
                         active={activeItem === "notifications"}
                         onClick={() => handleMenuItemClick("notifications")}
                     >
-                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "notifications" ? 'active' : 'inactive'}>
-                            Notifications
-                        </StyledNavLink>
+                            {!resSideBar && !menuCollapse  &&  'Notifications'}
+                        
                     </MenuItem>
+                </StyledNavLink>
+                    <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "analytics" ? 'active' : 'inactive'}>
                     <MenuItem
                         icon={<AnalyticIcon active={activeItem === "analytics"} />}
                         active={activeItem === "analytics"}
                         onClick={() => handleMenuItemClick("analytics")}
                     >
-                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "analytics" ? 'active' : 'inactive'}>
-                            Analytics
-                        </StyledNavLink>
+                            {!resSideBar && !menuCollapse  &&  'Analytics'}
                     </MenuItem>
+                </StyledNavLink>
+                    <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "inventory" ? 'active' : 'inactive'}>
                     <MenuItem
                         icon={<InventoryIcon active={activeItem === "inventory"} />}
                         active={activeItem === "inventory"}
                         onClick={() => handleMenuItemClick("inventory")}
                     >
-                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "inventory" ? 'active' : 'inactive'}>
-                            Inventory
-                        </StyledNavLink>
-                    </MenuItem>
+                            {!resSideBar && !menuCollapse  && 'Inventory'}
+                        </MenuItem>
+                    </StyledNavLink>
+
                 </Menu>
+     
                 <Menu style={{ position: "absolute", bottom: "0", left: menuCollapse ? '0' :'24px' }}>
+                    <StyledNavLink to="/" className={activeItem === "inventory" ? 'active' : 'inactive'}>
                     <MenuItem icon={<LogoutIcon />}>
-                        <StyledNavLink to="/">
-                            Logout
-                        </StyledNavLink>
-                    </MenuItem>
+                            {!resSideBar && !menuCollapse  && 'Logout'}
+                        </MenuItem>
+                </StyledNavLink>
                 </Menu>
             </Sidebar>
         </HeaderContainer>
