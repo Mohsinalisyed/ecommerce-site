@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, ContentWrapper } from './style';
-import { Box, Img } from '../utlis';
+import { Box, Flex, Img, StarIcon, StyledText } from '../utlis';
 import Button from '../utlis/ui_components/Button';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../features/cartSlice';
@@ -29,26 +29,50 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, name, price, id }) 
 
     return (
         <Card>
-            <Box style={{ height: "260px" }}>
+            <Flex style={{ height: "260px" }} alignItems='center'>
                 <Img src={imageSrc} alt="Product" />
-            </Box>
+            </Flex>
             <Box className="buttons">
                 <Button radius='0'
                     borderColor='transparent'
                     bg='#111111'
                     color='#ffffff'
+                    height='49.12px'
                     onClick={handleAddToCart}>
-                    ADD TO CART
+                    <StyledText fontFamily='RobotoCondensed-Bold' weight='700' size='13px' lineHeight='15px'>ADD TO CART</StyledText>
                 </Button>
-                <Button radius='0' borderColor='transparent' bg='#89089F' color='#ffffff'>QUICK VIEW</Button>
+                <Button
+                    radius='0'
+                    borderColor='transparent'
+                    bg='#89089F'
+                    height='49.12px'
+                    color='#ffffff'>
+                    <StyledText fontFamily='RobotoCondensed-Bold' weight='700' size='13px' lineHeight='15px'>QUICK VIEW</StyledText>
+                </Button>
             </Box>
             <ContentWrapper>
-                <Box className="name">{name}</Box>
-                <Box className="price">{price}</Box>
+                <StyledText fontFamily='RobotoCondensed-Bold' weight='700' size='20px' lineHeight='23px' color=' #000000'>
+                    {name}
+                </StyledText>
+                <StyledText fontFamily='RobotoCondensed-Bold' weight='700' size='20px' lineHeight='23px' color=' #000000'>
+                    {price}
+                </StyledText>
             </ContentWrapper>
             <ContentWrapper>
-                <Box className="rating">Rating</Box>
-                <Box className="star">⭐</Box>
+                <StyledText
+                    color="#1F1F22"
+                    fontFamily="OpenSans-Italic"
+                    weight="400"
+                    lineHeight="23px"
+                    size="17px"
+                >
+                    Running
+                </StyledText>
+                <Flex alignItems='center'>
+                    {Array.from({ length: 4 }, (_, index) => (
+                        <StarIcon key={index} style={{ marginRight: index < 3 ? '6.7px' : '0' }} />
+                    ))}
+                </Flex>
             </ContentWrapper>
         </Card>
     );
