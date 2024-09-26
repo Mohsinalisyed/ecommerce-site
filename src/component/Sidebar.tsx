@@ -97,7 +97,7 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
                 </Menu>
                 <Menu style={{ position: "absolute", bottom: "0", left: menuCollapse ? '0' :'24px' }}>
                     <MenuItem icon={<LogoutIcon />}>
-                        <StyledNavLink to="/logout">
+                        <StyledNavLink to="/">
                             Logout
                         </StyledNavLink>
                     </MenuItem>
