@@ -32,14 +32,14 @@ const CartItem: React.FC<CartItemProps> = ({ id, quantity, name, price, image })
                         {name}
                     </StyledText>
                     <br />
-                    <StyledText color="#1F1F22" fontFamily="OpenSans-Light" weight="400" lineHeight="20px" size="14px">
+                    <StyledText color="#1F1F22" fontFamily="OpenSans-Italic" weight="400" lineHeight="20px" size="14px">
                         Running
                     </StyledText>
                 </Box>
             </Flex>
             <CustomWrapper>
                 <QuantityControl initialQuantity={quantity} itemId={id} />
-                <Price>$ {(parseFloat(price.replace('$', '')) * quantity).toFixed(0)}</Price>
+                <Price>${(parseFloat(price.replace('$', '')) * quantity).toFixed(2)}</Price>
                 <DeleteIcon onClick={handleRemove}>
                     <TrashIcon />
                 </DeleteIcon>

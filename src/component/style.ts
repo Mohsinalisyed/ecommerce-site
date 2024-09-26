@@ -192,12 +192,17 @@ const ArrowButton = styled.div`
 `;
 
 const QuantityDisplay = styled.div`
-  font-size: 16px;
+font-size: 16px;
+  color:#393939;
+  font-weight: 600;
+ 
 `;
 
 const Price = styled.div`
-  font-size: 16px;
-  color: #333;
+  font-family: OpenSans-Bold;
+  font-weight: 700;
+  font-size: 20.09px;
+  line-height: 27.36px;
 `;
 
 const DeleteIcon = styled.button`

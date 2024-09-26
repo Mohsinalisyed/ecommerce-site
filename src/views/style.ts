@@ -31,7 +31,8 @@ export const AddToCartWrapper = styled.div`
   display: flex;              
   justify-content: space-between;
   align-items:center;
-  padding: 24px;            
+  padding: 24px;     
+  margin-bottom:24px;       
 `;
 export const ImageWrapper = styled.div`
   width: auto;             

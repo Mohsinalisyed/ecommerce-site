@@ -23,7 +23,6 @@ const QuantityControl: React.FC<QuantityControlProps> = ({ initialQuantity, item
         }
     };
 
-    // Dispatch updateItem action whenever quantity changes
     useEffect(() => {
         dispatch(updateItem({ id: itemId, quantity }));
     }, [quantity, itemId, dispatch]);

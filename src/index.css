@@ -19,3 +19,7 @@ body {
   font-family: 'OpenSans-Light';
   src: local('OpenSans-Light'), url(./fonts/OpenSans-Light.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: local('OpenSans-Italict'), url(./fonts/OpenSans-Italic.ttf) format('truetype');
+}
