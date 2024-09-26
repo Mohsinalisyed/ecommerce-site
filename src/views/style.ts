@@ -31,14 +31,20 @@ export const AddToCartWrapper = styled.div`
   width:100%;
   max-width: 1088px;             
   height: auto;            
-  max-height: 168px;      
+  min-height: 168px;      
   border-radius: 16px;        
   border: 1px solid #f2f2f2; 
   display: flex;              
   justify-content: space-between;
   align-items:center;
   padding: 24px;     
-  margin-bottom:24px;       
+  margin-bottom:24px;  
+  box-sizing: border-box;
+    @media (max-width: 768px) {
+    flex-direction:column;
+    justify-content:center;
+    gap:16px
+  };     
 `;
 export const ImageWrapper = styled.div`
   width: auto;             

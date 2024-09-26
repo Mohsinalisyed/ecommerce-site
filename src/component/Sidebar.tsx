@@ -39,7 +39,7 @@ const MainSidebar: React.FC<MainSidebarProps> = ({
     return (
         <HeaderContainer>
             <Sidebar collapsed={menuCollapse}>
-                <LogoContainer className="logotext">
+                <LogoContainer className="logotext" style={{ padding: menuCollapse?"16px":'24px'}}>
                     <Flex alignItems="center" gap="12px">
                         <Img src={ProfileImg} alt="ProfileImg" />
                         <Box>

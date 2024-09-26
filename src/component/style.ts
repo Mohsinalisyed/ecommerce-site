@@ -60,6 +60,9 @@ export const AuthFormWrapper = styled.div`
   background: #ffffff;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
+    @media (max-width: 768px) {
+    margin-top:24px;
+  };
 `;
 export const ForgotPasswordStyle = styled.div`
   display: flex;
