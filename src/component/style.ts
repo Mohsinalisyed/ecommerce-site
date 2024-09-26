@@ -164,6 +164,56 @@ const ContentWrapper = styled.div`
   display:flex;
   justify-content:space-between;
 `;
+
+const CustomWrapper = styled.div`
+  width: auto;
+  height: auto;
+  max-width: 205px;
+  max-height: 27px;
+  display: flex;
+  gap: 44px;
+  align-items: center;
+`;
+
+const QuantityWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const ArrowButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+const QuantityDisplay = styled.div`
+  font-size: 16px;
+`;
+
+const Price = styled.div`
+  font-size: 16px;
+  color: #333;
+`;
+
+const DeleteIcon = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ff0000;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
 export {
   HeaderContainer,
   CloseMenu,
@@ -175,4 +225,10 @@ export {
   Card,
   CardWrapper,
   ContentWrapper,
+  CustomWrapper,
+  ArrowButton,
+  QuantityDisplay,
+  QuantityWrapper,
+  Price,
+  DeleteIcon
 };
