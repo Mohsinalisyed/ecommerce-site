@@ -33,7 +33,7 @@ const SignIn = () => {
       const userData = JSON.parse(storedUser);
       if (userData.password === data.password) {
         setMassage("Login successful!");
-        navigate('/home');
+        navigate('/dashboard');
       } else {
         setMassage("Incorrect password.");
       }

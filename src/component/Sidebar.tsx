@@ -1,74 +1,100 @@
-import React from "react";
+import React, { useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
-import { NavLink } from "react-router-dom";
-import { HeaderContainer, CloseMenu, LogoContainer } from "./style";
+import { HeaderContainer, CloseMenu, LogoContainer, StyledNavLink } from "./style";
+import ProfileImg from "../assets/ProfileImg.png";
+import { AnalyticIcon, Box, DashboardIcon, Flex, InventoryIcon, LogoutIcon, NotificationIcon, ProductIcon, StyledText } from "../utlis";
 
 interface MainSidebarProps {
     menuCollapse: boolean;
     setMenuCollapse: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MainSidebar: React.FC<MainSidebarProps> = ({ menuCollapse, setMenuCollapse }) => {
+const MainSidebar: React.FC<MainSidebarProps> = ({
+    menuCollapse,
+    setMenuCollapse,
+}) => {
+    const [activeItem, setActiveItem] = useState<string>("dashboard"); // Set default active item
+
     const menuIconClick = () => {
-        setMenuCollapse(prev => !prev);
+        setMenuCollapse((prev) => !prev);
+    };
+
+    const handleMenuItemClick = (item: string) => {
+        setActiveItem(item);
     };
 
     return (
         <HeaderContainer>
             <Sidebar collapsed={menuCollapse}>
                 <LogoContainer className="logotext">
-                    <p>{menuCollapse ? "Logo" : "Big Logo"}</p>
+                    <Flex alignItems="center" gap="12px">
+                        <img src={ProfileImg} alt="ProfileImg" />
+                        <Box>
+                            <StyledText color="#09090A" fontFamily="OpenSans-Bold" weight="700" lineHeight="22px" size="16px">
+                                Mark Wood
+                            </StyledText>
+                            <br />
+                            <StyledText color="#1F1F22" fontFamily="OpenSans-Light" weight="400" lineHeight="20px" size="14px">
+                                marki@demo.com
+                            </StyledText>
+                        </Box>
+                    </Flex>
                 </LogoContainer>
                 <CloseMenu onClick={menuIconClick}>
-                    {menuCollapse ? 'Open' : 'Close'}
+                    {menuCollapse ? "Open" : "Close"}
                 </CloseMenu>
                 <Menu>
-                    <MenuItem>
-                        <NavLink to="/home" style={({ isActive }) => ({
-                            textDecoration: 'none',
-                            color: isActive ? 'blue' : 'inherit',
-                        })}>
-                            Home
-                        </NavLink>
+                    <MenuItem
+                        icon={<DashboardIcon active={activeItem === "dashboard" } />}
+                        active={activeItem === "dashboard"}
+                        onClick={() => handleMenuItemClick("dashboard")}
+                    >
+                        <StyledNavLink to="/dashboard" className={activeItem === "dashboard" ? 'active' : 'inactive'}>
+                            Dashboard
+                        </StyledNavLink>
                     </MenuItem>
-                    <MenuItem>
-                        <NavLink to="/home/category" style={({ isActive }) => ({
-                            textDecoration: 'none',
-                            color: isActive ? 'blue' : 'inherit',
-                        })}>
-                            Category
-                        </NavLink>
+                    <MenuItem
+                        icon={<ProductIcon active={activeItem === "products"} />}
+                        active={activeItem === "products"}
+                        onClick={() => handleMenuItemClick("products")}
+                    >
+                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "products" ? 'active' : 'inactive'}>
+                            Products
+                        </StyledNavLink>
                     </MenuItem>
-                    <MenuItem>
-                        <NavLink to="/home/favourite" style={({ isActive }) => ({
-                            textDecoration: 'none',
-                            color: isActive ? 'blue' : 'inherit',
-                        })}>
-                            Favourite
-                        </NavLink>
+                    <MenuItem
+                        icon={<NotificationIcon active={activeItem === "notifications"} />}
+                        active={activeItem === "notifications"}
+                        onClick={() => handleMenuItemClick("notifications")}
+                    >
+                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "notifications" ? 'active' : 'inactive'}>
+                            Notifications
+                        </StyledNavLink>
                     </MenuItem>
-                    <MenuItem>
-                        <NavLink to="/home/author" style={({ isActive }) => ({
-                            textDecoration: 'none',
-                            color: isActive ? 'blue' : 'inherit',
-                        })}>
-                            Author
-                        </NavLink>
+                    <MenuItem
+                        icon={<AnalyticIcon active={activeItem === "analytics"} />}
+                        active={activeItem === "analytics"}
+                        onClick={() => handleMenuItemClick("analytics")}
+                    >
+                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "analytics" ? 'active' : 'inactive'}>
+                            Analytics
+                        </StyledNavLink>
                     </MenuItem>
-                    <MenuItem>
-                        <NavLink to="/home/settings" style={({ isActive }) => ({
-                            textDecoration: 'none',
-                            color: isActive ? 'blue' : 'inherit',
-                        })}>
-                            Settings
-                        </NavLink>
+                    <MenuItem
+                        icon={<InventoryIcon active={activeItem === "inventory"} />}
+                        active={activeItem === "inventory"}
+                        onClick={() => handleMenuItemClick("inventory")}
+                    >
+                        <StyledNavLink to="/dashboard/comingsoon" className={activeItem === "inventory" ? 'active' : 'inactive'}>
+                            Inventory
+                        </StyledNavLink>
                     </MenuItem>
                 </Menu>
-                <Menu style={{ position: "absolute", bottom: "0" }}>
-                    <MenuItem>
-                        <NavLink to="/logout" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Menu style={{ position: "absolute", bottom: "0", left: '24px' }}>
+                    <MenuItem icon={<LogoutIcon />}>
+                        <StyledNavLink to="/logout">
                             Logout
-                        </NavLink>
+                        </StyledNavLink>
                     </MenuItem>
                 </Menu>
             </Sidebar>

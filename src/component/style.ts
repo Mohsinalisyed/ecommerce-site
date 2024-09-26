@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import authimage from "../assets/AuthImage.png";
 import { Menu } from "react-pro-sidebar";
+import { NavLink } from 'react-router-dom';
+
 
 
 export const StyledMenu = styled(Menu)`
@@ -63,61 +65,21 @@ export const ForgotPasswordStyle = styled.div`
 
 const HeaderContainer = styled.div`
   position: absolute;
-  width: 220px;
 .ps-sidebar-root {
-height:100vh;
-};
-
-  .ps-sidebar-container {
-    height: 100vh;
-    width: 100%;
-    min-width: 100%;
-
-    &.collapsed {
-      width: 80px;
-      min-width: 80px;
-    }
-
-    .pro-sidebar-inner {
-      background-color: white;
-      box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
-
-      .pro-sidebar-layout {
-        overflow-y: hidden;
-
-        .logotext p {
-          font-size: 20px;
-          padding: 0 20px;
-          color: #000;
-          font-weight: bold;
-        }
-
-        ul {
-          padding: 0 5px;
-
-          .pro-inner-item {
-            color: #000;
-            margin: 10px 0;
-            font-weight: bold;
-
-            .pro-icon-wrapper {
-              background-color: #fbf4cd;
-              color: #000;
-              border-radius: 3px;
-
-              .pro-item-content {
-                color: #000;
-              }
-            }
-          }
-
-          .active {
-            background-image: linear-gradient(0deg, #fece00 0%, #ffe172 100%);
-          }
-        }
-      }
-    }
-  }
+  height:100vh;
+  width:266px;
+  .ps-menuitem-root {
+ width:218px;
+ margin:0 auto 24px auto;
+ .ps-menu-button {
+ padding:16px;
+ border-radius:8px;
+ };
+ .ps-menu-button.ps-active {
+background: #89089F;
+}
+ };
+ };
 `;
 
 const CloseMenu = styled.div`
@@ -134,7 +96,23 @@ const CloseMenu = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  padding: 20px;
+  padding: 24px;
+  margin-bottom:20px;
+`;
+const StyledNavLink = styled(NavLink)`
+    text-decoration: none;
+    font-family:OpenSans-Light;
+    font-weight: 400;
+    line-height:22px;
+    font-size:16px;
+`;
+const ComingSoonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
 `;
 
-export { HeaderContainer, CloseMenu, LogoContainer };
+export { HeaderContainer, CloseMenu, LogoContainer, StyledNavLink, ComingSoonContainer };
