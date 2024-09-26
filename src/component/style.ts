@@ -175,6 +175,7 @@ const CustomWrapper = styled.div`
   display: flex;
   gap: 44px;
   align-items: center;
+  padding-right:24px;
 `;
 
 const QuantityWrapper = styled.div`
@@ -205,6 +206,8 @@ const Price = styled.div`
   font-weight: 700;
   font-size: 20.09px;
   line-height: 27.36px;
+  color:#000000;
+
 `;
 
 const DeleteIcon = styled.button`

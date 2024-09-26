@@ -11,7 +11,7 @@ export const Heading = styled.h1`
 export const CartWrapper = styled.div`
   max-width: 1574px;
   height: auto;       
-  max-height: 757px;  
+  min-height: 757px;  
   margin:0 auto ; 
   border-radius: 24px;   
   padding: 24px;     
@@ -21,8 +21,14 @@ export const CartWrapper = styled.div`
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   background:#ffffff;
   margin-top:40px;
+    @media (max-width: 1280px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const AddToCartWrapper = styled.div`
+  width:100%;
   max-width: 1088px;             
   height: auto;            
   max-height: 168px;      
