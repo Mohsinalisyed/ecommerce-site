@@ -23,6 +23,9 @@ export const AuthWrapper = styled.div`
   backdrop-filter: blur(24px);
   border: 1px solid #f2f2f2;
   overflow-x:hidden;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  };
 `;
 
 export const AuthSliderWrapper = styled.div`
