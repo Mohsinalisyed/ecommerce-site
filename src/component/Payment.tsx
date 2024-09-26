@@ -1,4 +1,4 @@
-import { Flex, Img, StyledText } from "../utlis"
+import { Flex, ForwardIcon, Img, StyledText } from "../utlis"
 import { CardTypeWrapper, CheckoutWrapper, PaymentWrapper, StyledBox } from "./style"
 import ProfileImg from "../assets/ProfileImg.png";
 import MasterCardIcon from "../assets/MasterCardIcon.png";
@@ -50,7 +50,7 @@ const Payment = () => {
             $1,672
           </StyledText>
           <StyledText size="16px" lineHeight="21px" fontFamily="OpenSans-Light" weight="400" color="#FEFCFC">
-            Checkout
+            <Flex alignItems="center">Checkout <ForwardIcon /></Flex>
           </StyledText>
         </Flex>
       </CheckoutWrapper>

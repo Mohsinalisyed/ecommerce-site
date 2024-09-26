@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, ContentWrapper } from './style';
-import { Box, Flex, Img, StarIcon, StyledText } from '../utlis';
+import { Box, Flex, HeartIcon, Img, StarIcon, StyledText } from '../utlis';
 import Button from '../utlis/ui_components/Button';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../features/cartSlice';
@@ -55,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, name, price, id }) 
                     {name}
                 </StyledText>
                 <StyledText fontFamily='RobotoCondensed-Bold' weight='700' size='20px' lineHeight='23px' color=' #000000'>
-                    {price}
+                    <Flex alignItems="center" gap='7px'> <HeartIcon /> {price}</Flex>
                 </StyledText>
             </ContentWrapper>
             <ContentWrapper>
